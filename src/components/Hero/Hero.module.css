@@ -1,0 +1,44 @@
+.heroSection {
+  background-image: url("../../assets/Picture@2x.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  text-align: center;
+  color: #ffffff;
+  padding: 0 16px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 32px;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #3470ff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #0b44cd;
+}
