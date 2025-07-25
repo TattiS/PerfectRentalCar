@@ -1,0 +1,45 @@
+.header {
+  background-color: #f0f2f5; /* світло-сірий фон */
+  padding: 12px 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 24px;
+  color: #000;
+}
+
+.logo-blue {
+  color: #1a56db; /* яскравий синій */
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #1a56db;
+}
+
+.nav-link.active {
+  color: #1a56db;
+  font-weight: 700;
+}

@@ -1,0 +1,36 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../../assets/Picture.png") no-repeat center/cover;
+  text-align: center;
+  color: #fff;
+}
+
+.title {
+  font-size: 96px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+
+.homeButton {
+  background-color: #3470ff;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.homeButton:hover {
+  background-color: #265dcd;
+}
