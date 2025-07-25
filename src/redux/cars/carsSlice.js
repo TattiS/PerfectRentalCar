@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCars } from "./carOperations";
+import { getCars } from "./carsOperations";
 
 const initialState = {
   items: [],
   isLoading: false,
   error: null,
   page: 1,
+  totalPages: 0,
+  totalCars: 0,
   hasMore: true,
 };
 
@@ -16,6 +18,8 @@ const carsSlice = createSlice({
     resetCars(state) {
       state.items = [];
       state.page = 1;
+      state.totalPages = 0;
+      state.totalCars = 0;
       state.hasMore = true;
       state.error = null;
     },
@@ -30,10 +34,12 @@ const carsSlice = createSlice({
         state.error = null;
       })
       .addCase(getCars.fulfilled, (state, action) => {
-        if (action.payload.length === 0) {
+        if (action.payload.totalPages === state.page) {
           state.hasMore = false;
         }
-        state.items.push(...action.payload);
+        state.items.push(...action.payload.cars);
+        state.totalPages = action.payload.totalPages;
+        state.totalCars = action.payload.totalCars;
         state.isLoading = false;
       })
       .addCase(getCars.rejected, (state, action) => {

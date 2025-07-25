@@ -18,7 +18,6 @@ import {
 import { selectUniqueRentalPrices } from "../../redux/cars/carsSelectors.js";
 import css from "./Filters.module.css";
 import { nanoid } from "nanoid";
-import ToastInfo from "../ToastInfo/ToastInfo.jsx";
 import Button from "../Button/Button.jsx";
 
 export default function Filter() {
@@ -135,7 +134,6 @@ export default function Filter() {
           </div>
         </div>
       </div>
-      <ToastInfo />
     </>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import Filter from "../../components/Filters/Filters";
-import CarsList from "../components/CarsList/CarsList";
-import LoadMoreBtn from "../components/LoadMoreBtn/LoadMoreBtn";
+import CarsList from "../../components/CarsList/CarsList";
+import LoadMoreBtn from "../../components/LoadMoreBtn/LoadMoreBtn";
 
 const CatalogPage = () => {
   return (

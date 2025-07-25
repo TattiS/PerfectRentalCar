@@ -1,0 +1,115 @@
+.carCard {
+  width: 274px; /* Ширина з макета */
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Manrope", sans-serif; /* Використовуйте шрифт з макета */
+  position: relative;
+  margin-bottom: 24px; /* Для відступу, якщо буде кілька карток */
+}
+
+.carCardImageContainer {
+  position: relative;
+  height: 268px; /* Висота з макета */
+  overflow: hidden;
+  border-radius: 14px;
+  margin-bottom: 14px;
+}
+
+.carCardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Забезпечує покриття всієї площі зображенням */
+  display: block;
+}
+
+.favoriteButton {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.favoriteButton svg {
+  fill: rgba(255, 255, 255, 0.8);
+  transition: fill 0.2s ease;
+}
+
+.favoriteButton:hover svg {
+  fill: #3470ff;
+}
+
+.carCardInfo {
+  padding: 0 16px 29px 16px;
+}
+
+.carCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.carCardTitle {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #121417;
+  margin: 0;
+}
+
+.carCardModel {
+  color: #3470ff; /* Колір моделі з макета */
+}
+
+.carCardPrice {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #121417;
+  margin: 0;
+}
+
+.carCardDetails {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12px;
+  line-height: 18px;
+  color: rgba(18, 20, 23, 0.5);
+  margin-bottom: 28px;
+}
+
+.carCardDetail {
+  white-space: nowrap;
+}
+
+.carCardDivider {
+  margin: 0 6px;
+  color: rgba(18, 20, 23, 0.1);
+}
+
+.carCardButton {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #3470ff;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.carCardButton:hover {
+  background-color: #0b4cd3;
+}
