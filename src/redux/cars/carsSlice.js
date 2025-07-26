@@ -34,12 +34,24 @@ const carsSlice = createSlice({
         state.error = null;
       })
       .addCase(getCars.fulfilled, (state, action) => {
-        if (action.payload.totalPages === state.page) {
-          state.hasMore = false;
+        console.log(action);
+        const {
+          cars = [],
+          totalPages = 0,
+          totalCars = 0,
+        } = action.payload || {};
+
+        totalPages === state.page
+          ? (state.hasMore = false)
+          : (state.hasMore = true);
+
+        if (state.page === 1) {
+          state.items = cars;
+        } else {
+          state.items.push(...cars);
         }
-        state.items.push(...action.payload.cars);
-        state.totalPages = action.payload.totalPages;
-        state.totalCars = action.payload.totalCars;
+        state.totalPages = totalPages;
+        state.totalCars = totalCars;
         state.isLoading = false;
       })
       .addCase(getCars.rejected, (state, action) => {

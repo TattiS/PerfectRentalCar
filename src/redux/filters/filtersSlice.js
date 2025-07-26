@@ -6,6 +6,7 @@ const initialState = {
   rentalPrice: "",
   minMileage: "",
   maxMileage: "",
+  searchTrigger: false,
   brands: [],
   loading: false,
   error: null,
@@ -33,10 +34,14 @@ const filtersSlice = createSlice({
       state.minMileage = "";
       state.maxMileage = "";
       state.error = null;
+      state.loading = false;
     },
     resetBrands(state) {
       state.brands = [];
       state.error = null;
+    },
+    setSearchTrigger(state) {
+      state.searchTrigger = !state.searchTrigger;
     },
   },
   extraReducers: (builder) => {
@@ -63,5 +68,6 @@ export const {
   changeMaxMileageFilter,
   resetBrands,
   resetFilters,
+  setSearchTrigger,
 } = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;

@@ -38,5 +38,8 @@ export const store = configureStore({
       },
     }),
 });
-
+// store.subscribe(() => {
+//   const state = store.getState();
+//   localStorage.setItem("favorites", JSON.stringify(state.favorites.items));
+// });
 export const persistor = persistStore(store);

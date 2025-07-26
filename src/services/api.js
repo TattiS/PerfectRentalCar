@@ -18,6 +18,7 @@ export const fetchCars = async ({
   params.page = page;
 
   const { data } = await axiosInstance.get("/cars", { params });
+  console.log(data);
   return data;
 };
 
@@ -27,6 +28,6 @@ export const fetchCarById = async (id) => {
 };
 
 export const fetchBrands = async () => {
-  const data = await axiosInstance.get("/brands");
+  const { data } = await axiosInstance.get("/brands");
   return data;
 };

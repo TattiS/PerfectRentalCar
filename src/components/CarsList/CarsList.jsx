@@ -11,7 +11,6 @@ import {
 import { genericErrorMessage } from "../../redux/utils/generateThunk.js";
 import CarCard from "../CarCard/CarCard";
 import { getCars } from "../../redux/cars/carsOperations.js";
-import { selectFavorites } from "../../redux/favorites/favoritesSelectors.js";
 import Loader from "../Loader/Loader.jsx";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn.jsx";
 
@@ -20,6 +19,7 @@ import {
   selectPrice,
   selectMinMileage,
   selectMaxMileage,
+  selectSearchTrigger,
 } from "../../redux/filters/filtersSelectors.jsx";
 
 function CarsList() {
@@ -31,22 +31,20 @@ function CarsList() {
   const maxMileageValue = useSelector(selectMaxMileage);
   const cars = useSelector(selectCars);
   const hasMore = useSelector(selectHasMore);
-  const favorites = useSelector(selectFavorites);
   const isLoading = useSelector(selectCarsLoading);
   const error = useSelector(selectCarsError);
-
+  const searchTrigger = useSelector(selectSearchTrigger);
   const [page, setPage] = useState(1);
 
   const prevLengthRef = useRef(0);
-  // const cardRef = useRef(null);
 
   const handleLoadMore = () => {
     setPage((prev) => prev + 1);
   };
 
   useEffect(() => {
-    setPage((prev) => (prev !== 1 ? 1 : prev));
-  }, [brandValue, priceValue, minMileageValue, maxMileageValue]);
+    setPage(1);
+  }, [searchTrigger]);
 
   useEffect(() => {
     dispatch(
@@ -83,14 +81,11 @@ function CarsList() {
         {!isLoading && !error && cars.length > 0 && (
           <ul className={css.list}>
             {cars.map((car, index) => {
+              console.log(car);
               const isFirstNew = page > 1 && index === prevLengthRef.current;
               return (
                 <li key={car.id} ref={isFirstNew ? newItemRef : null}>
-                  <CarCard
-                    car={car}
-                    isFavorite={favorites.some((fav) => fav.id === car.id)}
-                    showRemoveButton={false}
-                  />
+                  <CarCard car={car} />
                 </li>
               );
             })}

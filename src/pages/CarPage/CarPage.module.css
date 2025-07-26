@@ -1,0 +1,26 @@
+/* Контейнер сторінки */
+.pageWrapper {
+  padding: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+/* Стилі для станів завантаження та помилки */
+.message {
+  font-size: 1.2rem;
+  color: #555;
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Стан помилки */
+.errorMessage {
+  color: #d93025;
+}
+
+/* Стан завантаження */
+.loadingMessage {
+  color: #0078d7;
+}

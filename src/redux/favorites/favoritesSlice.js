@@ -1,17 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const loadFromLocalStorage = () => {
-  try {
-    const serializedState = localStorage.getItem("favorites");
-    return serializedState ? JSON.parse(serializedState) : [];
-  } catch (error) {
-    console.error("Failed to load favorites from localStorage:", error);
-    return [];
-  }
-};
-
 const initialState = {
-  items: loadFromLocalStorage(),
+  items: [],
 };
 
 const favoritesSlice = createSlice({
@@ -25,11 +15,9 @@ const favoritesSlice = createSlice({
       } else {
         state.items.push(id);
       }
-
-      localStorage.setItem("favorites", JSON.stringify(state.items));
     },
   },
 });
 
 export const { toggleFavorite } = favoritesSlice.actions;
-export default favoritesSlice.reducer;
+export const favoritesReducer = favoritesSlice.reducer;

@@ -1,0 +1,75 @@
+.wrapper {
+  display: flex;
+  gap: 24px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+.left {
+  flex: 1;
+  max-width: 400px;
+}
+
+.image {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.right {
+  flex: 2;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.carId {
+  font-size: 0.85rem;
+  color: #888;
+  margin-left: 12px;
+  font-weight: 400;
+}
+
+.location {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.price {
+  font-size: 1.5rem;
+  color: #0078d7;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.description {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.subheading {
+  font-size: 1.25rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #0078d7;
+  padding-bottom: 4px;
+}
+
+.list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.list li {
+  margin-bottom: 6px;
+  font-size: 1rem;
+}

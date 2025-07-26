@@ -7,7 +7,7 @@ export const selectTotalCars = (state) => state.cars.totalCars;
 export const selectHasMore = (state) => state.cars.hasMore;
 
 export const selectUniqueRentalPrices = createSelector([selectCars], (cars) => {
-  if (!cars || cars.length === 0) return ["30", "40", "50", "80"];
+  if (!cars || cars.length === 0) return ["30", "40", "50", "60", "70", "80"];
 
   return Array.from(new Set(cars.map((car) => car.rentalPrice))).sort(
     (a, b) => a - b
@@ -15,3 +15,6 @@ export const selectUniqueRentalPrices = createSelector([selectCars], (cars) => {
 });
 export const selectCarsError = (state) => state.cars.error;
 export const selectCarsLoading = (state) => state.cars.isLoading;
+export const selectCarById = (state, carId) => {
+  return state.cars.items.find((car) => car.id === carId);
+};

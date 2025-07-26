@@ -6,8 +6,8 @@ export const genericErrorMessage =
 export const generateThunk = (name, requestFunc) => {
   return createAsyncThunk(name, async (arg, thunkAPI) => {
     try {
-      const response = await requestFunc(arg);
-      return response.data.data;
+      const data = await requestFunc(arg);
+      return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(
         error.response?.data?.message || error.message || genericErrorMessage
