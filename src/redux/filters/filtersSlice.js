@@ -40,8 +40,8 @@ const filtersSlice = createSlice({
       state.brands = [];
       state.error = null;
     },
-    setSearchTrigger(state) {
-      state.searchTrigger = !state.searchTrigger;
+    setSearchTrigger(state, action) {
+      state.searchTrigger = action.payload;
     },
   },
   extraReducers: (builder) => {

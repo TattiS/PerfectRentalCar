@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 28px;
   flex: 1 0 0;
   width: 276px;
   height: 424px;
@@ -10,11 +9,15 @@
 
 .carCardImageContainer {
   position: relative;
+  margin-bottom: 16px;
 }
 
 .carCardImage {
   width: 276px;
   height: 268px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
   border-radius: 14px;
   background: linear-gradient(
     180deg,
@@ -30,28 +33,28 @@
   position: absolute;
   top: 16px;
   right: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-.active {
-  fill: var(--button, #3470ff);
-  stroke: none;
-}
-
-.heartIcon {
+/* .heartIcon {
   fill: none;
   stroke: var(--badges, #f2f4f7);
+  transition: fill 0.3s ease, stroke 0.3s ease;
 }
 
-.carCardInfo {
-}
+.heartIconActive {
+  fill: var(--button, #3470ff);
+  stroke: var(--button, #3470ff);
+} */
 
 .carCardHeader {
   padding-right: 11px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-  margin-bottom: 16px;
+  margin-bottom: 2px;
 }
 
 .carCardTitle {
@@ -65,12 +68,6 @@
 
 .carCardModel {
   color: var(--button, #3470ff);
-
-  font-family: Manrope;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.25;
 }
 
 .carCardPrice {
@@ -93,9 +90,6 @@
   line-height: 1.33;
 }
 
-.carCardDetail {
-}
-
 .carCardDivider {
   font-size: 16px;
   color: var(--gray-light, #dadde1);
@@ -107,7 +101,9 @@
   height: 44px;
   padding-top: 12px;
   padding-bottom: 12px;
+  margin-bottom: 0px;
   justify-content: center;
+  cursor: pointer;
   align-items: center;
   border-radius: 12px;
   background-color: var(--button, #3470ff);

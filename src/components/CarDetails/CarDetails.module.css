@@ -1,40 +1,51 @@
-.wrapper {
+.detailsWrapper {
   display: flex;
-  gap: 24px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #222;
-}
-
-.left {
-  flex: 1;
-  max-width: 400px;
-}
-
-.image {
   width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 72px;
+  flex-shrink: 0;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 40px;
+  max-width: 640px;
+}
+
+.carImg {
+  width: 640px;
+  height: 512px;
   border-radius: 8px;
   object-fit: cover;
   margin-bottom: 20px;
 }
 
-.right {
-  flex: 2;
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .title {
-  font-size: 2rem;
-  margin-bottom: 8px;
-  font-weight: 700;
+  color: var(--main, #101828);
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.33;
 }
 
 .carId {
-  font-size: 0.85rem;
-  color: #888;
-  margin-left: 12px;
-  font-weight: 400;
+  color: var(--gray, #8d929a);
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25;
 }
 
 .location {
@@ -43,10 +54,13 @@
 }
 
 .price {
-  font-size: 1.5rem;
-  color: #0078d7;
+  align-self: stretch;
+  color: var(--button, #3470ff);
+  font-family: Manrope;
+  font-size: 24px;
+  font-style: normal;
   font-weight: 600;
-  margin-bottom: 16px;
+  line-height: 1.33;
 }
 
 .description {

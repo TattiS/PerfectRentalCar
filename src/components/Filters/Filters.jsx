@@ -52,11 +52,15 @@ export default function Filter() {
   };
   const handleMinMileageChange = (e) => {
     const filterValue = e.target.value;
-    dispatch(changeMinMileageFilter(filterValue));
+    if (/^\d*$/.test(filterValue)) {
+      dispatch(changeMinMileageFilter(filterValue));
+    }
   };
   const handleMaxMileageChange = (e) => {
     const filterValue = e.target.value;
-    dispatch(changeMaxMileageFilter(filterValue));
+    if (/^\d*$/.test(filterValue)) {
+      dispatch(changeMaxMileageFilter(filterValue));
+    }
   };
   return (
     <>
@@ -109,18 +113,26 @@ export default function Filter() {
               <div className={css.mileageFiltersInputWrapper}>
                 <input
                   className={css.mileageFilterMin}
-                  type="number"
+                  type="text"
                   name="minMileage"
                   placeholder="From"
-                  value={minMileage ?? ""}
+                  value={
+                    minMileage !== null && minMileage !== undefined
+                      ? minMileage
+                      : ""
+                  }
                   onChange={handleMinMileageChange}
                 />
                 <input
                   className={css.mileageFilterMax}
-                  type="number"
+                  type="text"
                   name="maxMileage"
                   placeholder="To"
-                  value={maxMileage ?? ""}
+                  value={
+                    maxMileage !== null && maxMileage !== undefined
+                      ? maxMileage
+                      : ""
+                  }
                   onChange={handleMaxMileageChange}
                 />
               </div>

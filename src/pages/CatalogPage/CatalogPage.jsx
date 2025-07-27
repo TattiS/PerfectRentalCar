@@ -1,4 +1,3 @@
-import React from "react";
 import Filter from "../../components/Filters/Filters";
 import CarsList from "../../components/CarsList/CarsList";
 

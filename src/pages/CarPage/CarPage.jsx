@@ -30,7 +30,11 @@ const CarPage = () => {
   if (error) return <p>Error loading car: {error}</p>;
   if (!car) return <p>Car not found</p>;
 
-  return <CarDetails car={car} />;
+  return (
+    <section style={{ width: "100%", padding: "40px 16px" }}>
+      <CarDetails car={car} />
+    </section>
+  );
 };
 
 export default CarPage;

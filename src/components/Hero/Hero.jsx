@@ -1,4 +1,3 @@
-import Button from "../Button/Button";
 import css from "./Hero.module.css";
 import { Link } from "react-router-dom";
 

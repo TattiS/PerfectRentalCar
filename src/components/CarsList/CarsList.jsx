@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import css from "./CarsList.module.css";
 
@@ -7,63 +7,40 @@ import {
   selectCars,
   selectCarsLoading,
   selectHasMore,
+  selectPage,
 } from "../../redux/cars/carsSelectors.js";
+import { setPage } from "../../redux/cars/carsSlice.js";
 import { genericErrorMessage } from "../../redux/utils/generateThunk.js";
 import CarCard from "../CarCard/CarCard";
 import { getCars } from "../../redux/cars/carsOperations.js";
 import Loader from "../Loader/Loader.jsx";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn.jsx";
 
-import {
-  selectBrand,
-  selectPrice,
-  selectMinMileage,
-  selectMaxMileage,
-  selectSearchTrigger,
-} from "../../redux/filters/filtersSelectors.jsx";
+import { selectSearchTrigger } from "../../redux/filters/filtersSelectors.jsx";
 
 function CarsList() {
   const dispatch = useDispatch();
 
-  const brandValue = useSelector(selectBrand);
-  const priceValue = useSelector(selectPrice);
-  const minMileageValue = useSelector(selectMinMileage);
-  const maxMileageValue = useSelector(selectMaxMileage);
   const cars = useSelector(selectCars);
   const hasMore = useSelector(selectHasMore);
   const isLoading = useSelector(selectCarsLoading);
   const error = useSelector(selectCarsError);
   const searchTrigger = useSelector(selectSearchTrigger);
-  const [page, setPage] = useState(1);
+  const page = useSelector(selectPage);
 
   const prevLengthRef = useRef(0);
 
   const handleLoadMore = () => {
-    setPage((prev) => prev + 1);
+    dispatch(setPage(page + 1));
   };
 
   useEffect(() => {
-    setPage(1);
-  }, [searchTrigger]);
+    dispatch(setPage(1));
+  }, [dispatch, searchTrigger]);
 
   useEffect(() => {
-    dispatch(
-      getCars({
-        brand: brandValue,
-        rentalPrice: priceValue,
-        minMileage: minMileageValue,
-        maxMileage: maxMileageValue,
-        page: page,
-      })
-    );
-  }, [
-    dispatch,
-    brandValue,
-    priceValue,
-    minMileageValue,
-    maxMileageValue,
-    page,
-  ]);
+    dispatch(getCars());
+  }, [dispatch, searchTrigger, page]);
 
   const newItemRef = useRef(null);
 
@@ -81,7 +58,6 @@ function CarsList() {
         {!isLoading && !error && cars.length > 0 && (
           <ul className={css.list}>
             {cars.map((car, index) => {
-              console.log(car);
               const isFirstNew = page > 1 && index === prevLengthRef.current;
               return (
                 <li key={car.id} ref={isFirstNew ? newItemRef : null}>

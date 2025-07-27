@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleFavorite } from "../../redux/favorites/favoritesSlice";
@@ -52,13 +51,19 @@ const CarCard = ({ car }) => {
           aria-label="Toggle favorite"
         >
           <svg
-            className={`${css.heartIcon} ${isFavorite ? css.active : ""}`}
+            className={`${css.heartIcon} ${
+              isFavorite ? css.heartIconActive : ""
+            }`}
             width="16"
             height="16"
             viewBox="0 0 16 16"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <use href="/sprite.svg#heart-icon" />
+            <use
+              href={`/svg-sprite.svg#${
+                isFavorite ? "heart-filled" : "heart-icon"
+              }`}
+            />
           </svg>
         </button>
       </div>

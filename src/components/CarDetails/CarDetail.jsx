@@ -1,5 +1,5 @@
 import RentalForm from "../RentalForm/RentalForm";
-import styles from "./CarDetails.module.css";
+import css from "./CarDetails.module.css";
 
 const CarDetails = ({ car }) => {
   const {
@@ -22,25 +22,30 @@ const CarDetails = ({ car }) => {
   } = car;
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.left}>
-        <img src={img} alt={`${brand} ${model}`} className={styles.image} />
+    <div className={css.detailsWrapper}>
+      <div className={css.leftSide}>
+        <img
+          src={img}
+          alt={`${brand} ${model}`}
+          className={css.carImg}
+          width={640}
+          height={512}
+        />
         <RentalForm car={car} />
       </div>
-
-      <div className={styles.right}>
-        <h1 className={styles.title}>
+      <div className={css.rightSide}>
+        <h1 className={css.title}>
           {brand} {model}, {year}
-          <span className={styles.carId}>Id: {id}</span>
+          <span className={css.carId}>Id: {id}</span>
         </h1>
 
-        <p className={styles.location}>📍 {address}</p>
-        <p className={styles.price}>${rentalPrice}</p>
-        <p className={styles.description}>{description}</p>
+        <p className={css.location}>📍 {address}</p>
+        <p className={css.price}>${rentalPrice}</p>
+        <p className={css.description}>{description}</p>
 
         <div>
-          <h2 className={styles.subheading}>Rental Conditions:</h2>
-          <ul className={styles.list}>
+          <h2 className={css.subheading}>Rental Conditions:</h2>
+          <ul className={css.list}>
             {rentalConditions.map((cond, i) => (
               <li key={i}>✔ {cond}</li>
             ))}
@@ -48,8 +53,8 @@ const CarDetails = ({ car }) => {
         </div>
 
         <div>
-          <h2 className={styles.subheading}>Car Specifications:</h2>
-          <ul className={styles.list}>
+          <h2 className={css.subheading}>Car Specifications:</h2>
+          <ul className={css.list}>
             <li>🏢 Company: {rentalCompany}</li>
             <li>📅 Year: {year}</li>
             <li>🚘 Type: {type}</li>
@@ -60,8 +65,8 @@ const CarDetails = ({ car }) => {
         </div>
 
         <div>
-          <h2 className={styles.subheading}>Accessories:</h2>
-          <ul className={styles.list}>
+          <h2 className={css.subheading}>Accessories:</h2>
+          <ul className={css.list}>
             {accessories.map((item, i) => (
               <li key={i}>🛠 {item}</li>
             ))}
@@ -69,8 +74,8 @@ const CarDetails = ({ car }) => {
         </div>
 
         <div>
-          <h2 className={styles.subheading}>Functionalities:</h2>
-          <ul className={styles.list}>
+          <h2 className={css.subheading}>Functionalities:</h2>
+          <ul className={css.list}>
             {functionalities.map((item, i) => (
               <li key={i}>⚙ {item}</li>
             ))}

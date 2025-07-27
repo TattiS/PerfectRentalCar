@@ -1,6 +1,10 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import styles from "./RentalForm.module.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useState } from "react";
+
+import css from "./RentalForm.module.css";
 
 const RentalForm = ({ car }) => {
   const formik = useFormik({
@@ -13,7 +17,9 @@ const RentalForm = ({ car }) => {
     validationSchema: Yup.object({
       name: Yup.string().required("Required"),
       email: Yup.string().email("Invalid email").required("Required"),
-      date: Yup.string().required("Required"),
+      date: Yup.string()
+        .required("Required")
+        .min(new Date().setHours(0, 0, 0, 0), "Date cannot be in the past"),
     }),
     onSubmit: (values, { resetForm }) => {
       console.log("Booking info:", values, "for car", car.id);
@@ -21,11 +27,12 @@ const RentalForm = ({ car }) => {
       resetForm();
     },
   });
+  const [selectedDate, setSelectedDate] = useState(null);
 
   return (
-    <form onSubmit={formik.handleSubmit} className={styles.form}>
-      <h2 className={styles.formTitle}>Book your car now</h2>
-      <p className={styles.formSubtitle}>
+    <form onSubmit={formik.handleSubmit} className={css.form}>
+      <h2 className={css.formTitle}>Book your car now</h2>
+      <p className={css.formSubtitle}>
         Stay connected! We are always ready to help you.
       </p>
 
@@ -36,10 +43,10 @@ const RentalForm = ({ car }) => {
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         value={formik.values.name}
-        className={styles.input}
+        className={css.input}
       />
       {formik.touched.name && formik.errors.name && (
-        <p className={styles.error}>{formik.errors.name}</p>
+        <p className={css.error}>{formik.errors.name}</p>
       )}
 
       <input
@@ -49,22 +56,26 @@ const RentalForm = ({ car }) => {
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         value={formik.values.email}
-        className={styles.input}
+        className={css.input}
       />
       {formik.touched.email && formik.errors.email && (
-        <p className={styles.error}>{formik.errors.email}</p>
+        <p className={css.error}>{formik.errors.email}</p>
       )}
-
-      <input
-        name="date"
-        type="date"
-        onChange={formik.handleChange}
+      <DatePicker
+        selected={selectedDate}
+        onChange={(date) => {
+          setSelectedDate(date);
+          formik.setFieldValue("date", date);
+        }}
         onBlur={formik.handleBlur}
-        value={formik.values.date}
-        className={styles.input}
+        name="date"
+        minDate={new Date()}
+        dateFormat="yyyy-MM-dd"
+        placeholderText="Booking date*"
+        className={css.input}
       />
       {formik.touched.date && formik.errors.date && (
-        <p className={styles.error}>{formik.errors.date}</p>
+        <p className={css.error}>{formik.errors.date}</p>
       )}
 
       <textarea
@@ -72,10 +83,10 @@ const RentalForm = ({ car }) => {
         placeholder="Comment"
         onChange={formik.handleChange}
         value={formik.values.comment}
-        className={styles.textarea}
+        className={css.textarea}
       />
 
-      <button type="submit" className={styles.button}>
+      <button type="submit" className={css.button}>
         Send
       </button>
     </form>
