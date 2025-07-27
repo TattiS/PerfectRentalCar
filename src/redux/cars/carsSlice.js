@@ -37,7 +37,6 @@ const carsSlice = createSlice({
         state.error = null;
       })
       .addCase(getCars.fulfilled, (state, action) => {
-        console.log(action);
         const {
           cars = [],
           totalPages = 0,

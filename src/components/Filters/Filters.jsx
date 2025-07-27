@@ -12,8 +12,8 @@ import {
   selectBrand,
   selectBrands,
   selectPrice,
-  selectMinMileage,
-  selectMaxMileage,
+  selectFormattedMinMileage,
+  selectFormattedMaxMileage,
 } from "../../redux/filters/filtersSelectors";
 import { selectUniqueRentalPrices } from "../../redux/cars/carsSelectors.js";
 import css from "./Filters.module.css";
@@ -34,8 +34,8 @@ export default function Filter() {
   const brand = useSelector(selectBrand);
   const brands = useSelector(selectBrands);
   const rentalPrice = useSelector(selectPrice);
-  const minMileage = useSelector(selectMinMileage);
-  const maxMileage = useSelector(selectMaxMileage);
+  const minMileage = useSelector(selectFormattedMinMileage);
+  const maxMileage = useSelector(selectFormattedMaxMileage);
   const brandsWithId = useMemo(
     () => brands.map((item) => ({ id: nanoid(), value: item })),
     [brands]
@@ -52,14 +52,16 @@ export default function Filter() {
   };
   const handleMinMileageChange = (e) => {
     const filterValue = e.target.value;
-    if (/^\d*$/.test(filterValue)) {
-      dispatch(changeMinMileageFilter(filterValue));
+    const raw = filterValue.replace(/\s/g, "");
+    if (/^\d*$/.test(raw)) {
+      dispatch(changeMinMileageFilter(raw));
     }
   };
   const handleMaxMileageChange = (e) => {
     const filterValue = e.target.value;
-    if (/^\d*$/.test(filterValue)) {
-      dispatch(changeMaxMileageFilter(filterValue));
+    const raw = filterValue.replace(/\s/g, "");
+    if (/^\d*$/.test(raw)) {
+      dispatch(changeMaxMileageFilter(raw));
     }
   };
   return (

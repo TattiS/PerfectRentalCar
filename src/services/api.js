@@ -18,7 +18,6 @@ export const fetchCars = async ({
   params.page = page;
 
   const { data } = await axiosInstance.get("/cars", { params });
-  console.log(data);
   return data;
 };
 
