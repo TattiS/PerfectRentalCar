@@ -39,9 +39,4 @@ This project was built as part of a frontend development practice using React an
 | `/catalog`       | Catalog of rental cars           |
 | `/catalog/:id`   | Detailed car page with booking   |
 
-## 🧩 Installation
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-username/perfect-rental-car.git
-   cd perfect-rental-car
