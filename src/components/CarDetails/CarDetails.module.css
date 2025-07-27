@@ -32,7 +32,7 @@
 
 .title {
   color: var(--main, #101828);
-  text-align: center;
+  text-align: left;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -40,6 +40,8 @@
 }
 
 .carId {
+  display: inline-block;
+  padding-left: 16px;
   color: var(--gray, #8d929a);
   font-family: Manrope;
   font-size: 16px;
@@ -49,7 +51,13 @@
 }
 
 .location {
-  font-size: 1rem;
+  color: var(--main, #101828);
+  /* body */
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 125% */
   margin-bottom: 6px;
 }
 
@@ -64,16 +72,28 @@
 }
 
 .description {
-  font-size: 1rem;
-  margin-bottom: 20px;
-  line-height: 1.4;
+  color: var(--main, #101828);
+
+  /* body */
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 125% */
 }
 
 .subheading {
-  font-size: 1.25rem;
+  color: var(--main, #101828);
+
+  /* h3 */
+  font-family: Manrope;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 120% */
   margin-top: 20px;
   margin-bottom: 10px;
-  border-bottom: 2px solid #0078d7;
+  border: none;
   padding-bottom: 4px;
 }
 

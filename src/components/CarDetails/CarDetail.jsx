@@ -7,7 +7,6 @@ const CarDetails = ({ car }) => {
     brand,
     model,
     year,
-    id,
     address,
     mileage,
     rentalPrice,
@@ -18,7 +17,6 @@ const CarDetails = ({ car }) => {
     engineSize,
     accessories,
     functionalities,
-    rentalCompany,
   } = car;
 
   return (
@@ -36,48 +34,90 @@ const CarDetails = ({ car }) => {
       <div className={css.rightSide}>
         <h1 className={css.title}>
           {brand} {model}, {year}
-          <span className={css.carId}>Id: {id}</span>
+          <span className={css.carId}>
+            Id: {img.match(/\/(\d+)-ai\.jpg$/)?.[1]}
+          </span>
         </h1>
 
-        <p className={css.location}>📍 {address}</p>
+        <p className={css.location}>
+          <svg className={css.icon} width="16" height="16">
+            <use href="/sprite.svg#pin-icon" />
+          </svg>{" "}
+          {address}
+        </p>
         <p className={css.price}>${rentalPrice}</p>
         <p className={css.description}>{description}</p>
 
         <div>
-          <h2 className={css.subheading}>Rental Conditions:</h2>
+          <h3 className={css.subheading}>Rental Conditions:</h3>
           <ul className={css.list}>
             {rentalConditions.map((cond, i) => (
-              <li key={i}>✔ {cond}</li>
+              <li key={i}>
+                <svg className={css.icon} width="16" height="16">
+                  <use href="/sprite.svg#v-sign-icon" />
+                </svg>{" "}
+                {cond}
+              </li>
             ))}
           </ul>
         </div>
 
         <div>
-          <h2 className={css.subheading}>Car Specifications:</h2>
+          <h3 className={css.subheading}>Car Specifications:</h3>
           <ul className={css.list}>
-            <li>🏢 Company: {rentalCompany}</li>
-            <li>📅 Year: {year}</li>
-            <li>🚘 Type: {type}</li>
-            <li>⛽ Fuel Consumption: {fuelConsumption} L/100km</li>
-            <li>⚙ Engine Size: {engineSize}</li>
-            <li>🧭 Mileage: {mileage.toLocaleString()} km</li>
+            <li>
+              <svg className={css.icon} width="16" height="16">
+                <use href="/sprite.svg#calendar-icon" />
+              </svg>{" "}
+              Year: {year}
+            </li>
+            <li>
+              <svg className={css.icon} width="16" height="16">
+                <use href="/sprite.svg#car-icon" />
+              </svg>{" "}
+              Type: {type}
+            </li>
+            <li>
+              <svg className={css.icon} width="16" height="16">
+                <use href="/sprite.svg#gear-icon" />
+              </svg>{" "}
+              Fuel Consumption: {fuelConsumption} L/100km
+            </li>
+            <li>
+              <svg className={css.icon} width="16" height="16">
+                <use href="/sprite.svg#car-icon" />
+              </svg>{" "}
+              Engine Size: {engineSize}
+            </li>
+            <li>
+              <svg className={css.icon} width="16" height="16">
+                <use href="/sprite.svg#car-icon" />
+              </svg>{" "}
+              Mileage: {mileage.toLocaleString()} km
+            </li>
           </ul>
         </div>
 
         <div>
-          <h2 className={css.subheading}>Accessories:</h2>
+          <h3 className={css.subheading}>Accessories and functionalities:</h3>
           <ul className={css.list}>
             {accessories.map((item, i) => (
-              <li key={i}>🛠 {item}</li>
+              <li key={i}>
+                <svg className={css.icon} width="16" height="16">
+                  <use href="/sprite.svg#v-sign-icon" />
+                </svg>{" "}
+                {item}
+              </li>
             ))}
           </ul>
-        </div>
-
-        <div>
-          <h2 className={css.subheading}>Functionalities:</h2>
           <ul className={css.list}>
             {functionalities.map((item, i) => (
-              <li key={i}>⚙ {item}</li>
+              <li key={i}>
+                <svg className={css.icon} width="16" height="16">
+                  <use href="/sprite.svg#v-sign-icon" />
+                </svg>{" "}
+                {item}
+              </li>
             ))}
           </ul>
         </div>

@@ -6,17 +6,13 @@
       rgba(0, 0, 0, 0.2) 0%,
       rgba(0, 0, 0, 0.2) 100%
     ),
-    -webkit-image-set(url("/public/Picture@1x.png") 1x, url("/public/Picture@2x.png")
-          2x);
+    -webkit-image-set(url("/Picture@1x.png") 1x, url("/Picture@2x.png") 2x);
   background: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.2) 0%,
       rgba(0, 0, 0, 0.2) 100%
     ),
-    image-set(
-      url("/public/Picture@1x.png") 1x,
-      url("/public/Picture@2x.png") 2x
-    );
+    image-set(url("/Picture@1x.png") 1x, url("/Picture@2x.png") 2x);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
