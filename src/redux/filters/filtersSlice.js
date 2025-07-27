@@ -23,10 +23,10 @@ const filtersSlice = createSlice({
       state.rentalPrice = action.payload;
     },
     changeMinMileageFilter: (state, action) => {
-      state.minMileage = action.payload.minMileage;
+      state.minMileage = action.payload;
     },
     changeMaxMileageFilter: (state, action) => {
-      state.maxMileage = action.payload.maxMileage;
+      state.maxMileage = action.payload;
     },
     resetFilters: (state) => {
       state.brand = "";
