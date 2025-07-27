@@ -1,44 +1,71 @@
 .heroSection {
-  background-image: url("../../assets/Picture@2x.png");
+  width: 100%;
+  margin-top: 0;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    -webkit-image-set(url("/public/Picture@1x.png") 1x, url("/public/Picture@2x.png")
+          2x);
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    image-set(
+      url("/public/Picture@1x.png") 1x,
+      url("/public/Picture@2x.png") 2x
+    );
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .overlay {
-  text-align: center;
-  color: #ffffff;
-  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 .title {
-  font-size: 3rem;
-  font-weight: 700;
+  margin-top: 436px;
   margin-bottom: 16px;
+  color: var(--white, #fff);
+  text-align: center;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .subtitle {
-  font-size: 1.25rem;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
+  color: var(--white, #fff);
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.33;
 }
 
-.button {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #3470ff;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 500;
+.linkBtn {
+  display: block;
+
+  width: 276px;
+  padding: 12px 19px;
+  margin-bottom: 72px;
   border-radius: 12px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+  color: var(--white, #fff);
+  background: var(--button, #3470ff);
+  transition: var(--main-color-transition);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.25;
 }
-
-.button:hover,
-.button:focus {
-  background-color: #0b44cd;
+.linkBtn:hover {
+  color: var(--button-hover, #0b44cd);
 }
