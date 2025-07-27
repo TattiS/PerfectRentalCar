@@ -1,10 +1,11 @@
-import React from "react";
+import Filter from "../../components/Filters/Filters";
+import CarsList from "../../components/CarsList/CarsList";
 
 const CatalogPage = () => {
   return (
-    <section style={{ padding: "40px 16px" }}>
-      <h2>Car Catalog</h2>
-      {/* Тут буде фільтр + список авто */}
+    <section style={{ width: "100%", padding: "40px 16px" }}>
+      <Filter />
+      <CarsList />
     </section>
   );
 };

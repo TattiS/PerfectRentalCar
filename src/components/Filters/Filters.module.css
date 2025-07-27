@@ -1,0 +1,109 @@
+.filtersContainer {
+  margin-top: 84px;
+}
+
+.filtersRow {
+  display: flex;
+  justify-content: center;
+}
+
+.filtersForm {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+}
+
+.inputWrapper {
+  display: flex;
+  height: 68px;
+  flex-direction: column;
+  gap: 8px;
+}
+.filtersInputBrand,
+.filtersInputPrice {
+  display: flex;
+  padding: 12px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  background: var(--inputs, #f7f7f7);
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("/src/assets/arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+.filtersInputBrand {
+  width: 204px;
+}
+.filtersInputPrice {
+  width: 196px;
+}
+
+.filtersInputBrand option,
+.filtersInputPrice option {
+  color: var(--gray, #8d929a);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.inputWrapper label,
+.mileageFilters legend {
+  color: var(--gray, #8d929a);
+  font-family: Manrope;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.33;
+  text-align: left;
+}
+
+.mileageFilters {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.mileageFiltersInputWrapper {
+  margin-top: 8px;
+  display: flex;
+  gap: 0px;
+}
+.mileageFiltersInputWrapper input {
+  height: 44px;
+  padding: 12px 24px;
+  outline: none;
+  border-top: none;
+  border-bottom: none;
+  background: var(--inputs, #f7f7f7);
+}
+.mileageFilterMin {
+  border-radius: 12px 0 0 12px;
+  border-right: 1px solid var(--gray-light, #dadde1);
+  border-left: none;
+}
+.mileageFilterMax {
+  border-radius: 0 12px 12px 0;
+  border-left: 1px solid var(--gray-light, #dadde1);
+  border-right: none;
+}
+.filtersSubmitBtn {
+  display: flex;
+  width: 156px;
+  height: 44px;
+  padding: 12px 51px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  color: var(--white, #fff);
+  background: var(--button, #3470ff);
+  transition: var(--main-background-transition);
+}
+.filtersSubmitBtn:hover {
+  background: var(--button-hover);
+}
