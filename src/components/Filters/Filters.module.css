@@ -33,7 +33,7 @@
   background: var(--inputs, #f7f7f7);
   appearance: none;
   -webkit-appearance: none;
-  background-image: url("/src/assets/arrow-down.svg");
+  background-image: url("/svg-sprite.svg#arrow-down-icon");
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 16px;

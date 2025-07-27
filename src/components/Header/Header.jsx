@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import css from "./Header.module.css";
 
@@ -10,7 +9,7 @@ const Header = () => {
           <div className={css.logoContainer}>
             <a className={css.link} href="/">
               <svg className={css.icon} width="104" height="16">
-                <use href="/src/assets/Logo.svg" />
+                <use href="/Logo.svg" />
               </svg>
             </a>
           </div>
