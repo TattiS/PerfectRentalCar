@@ -50,14 +50,19 @@
 } */
 
 .carCardHeader {
+  max-width: 276px;
   padding-right: 11px;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 2px;
+  align-items: flex-start;
+  gap: 6px;
 }
 
 .carCardTitle {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 1;
+  min-width: 0;
   color: var(--main, #101828);
   font-family: Manrope;
   font-size: 16px;
@@ -67,14 +72,27 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  cursor: help;
 }
 
-.carCardModel {
+.carCardTitle span.carCardBrand {
+  flex-shrink: 0;
+}
+.carCardTitle span.carCardModel {
   color: var(--button, #3470ff);
+  flex-shrink: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.carCardTitle span.carCardYear {
+  flex-shrink: 0;
 }
 
 .carCardPrice {
-  display: block;
+  flex-shrink: 0;
+  color: var(--main, #101828);
 }
 .carCardDetailsWrapper {
   display: flex;
