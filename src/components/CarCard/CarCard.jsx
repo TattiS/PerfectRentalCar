@@ -70,8 +70,10 @@ const CarCard = ({ car }) => {
 
       <div className={css.carCardInfo}>
         <div className={css.carCardHeader}>
-          <h3 className={css.carCardTitle}>
-            {brand} <span className={css.carCardModel}>{model}</span>, {year}
+          <h3 className={css.carCardTitle} title={`${brand} ${model}, ${year}`}>
+            <span className={css.carCardBrand}>{brand}</span>
+            <span className={css.carCardModel}>{model},</span>
+            <span className={css.carCardYear}>{year}</span>
           </h3>
           <p className={css.carCardPrice}>${rentalPrice}</p>
         </div>
