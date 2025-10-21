@@ -55,8 +55,8 @@ const CarDetails = ({ car }) => {
               <li key={i}>
                 <svg className={css.icon} width="16" height="16">
                   <use href="/sprite.svg#v-sign-icon" />
-                </svg>{" "}
-                {cond}
+                </svg>
+                <p> {cond}</p>
               </li>
             ))}
           </ul>
@@ -68,32 +68,32 @@ const CarDetails = ({ car }) => {
             <li>
               <svg className={css.icon} width="16" height="16">
                 <use href="/sprite.svg#calendar-icon" />
-              </svg>{" "}
-              Year: {year}
+              </svg>
+              <p>Year: {year}</p>
             </li>
             <li>
               <svg className={css.icon} width="16" height="16">
                 <use href="/sprite.svg#car-icon" />
-              </svg>{" "}
-              Type: {type}
+              </svg>
+              <p>Type: {type}</p>
             </li>
             <li>
               <svg className={css.icon} width="16" height="16">
                 <use href="/sprite.svg#gear-icon" />
-              </svg>{" "}
-              Fuel Consumption: {fuelConsumption} L/100km
+              </svg>
+              <p>Fuel Consumption: {fuelConsumption} L/100km</p>
             </li>
             <li>
               <svg className={css.icon} width="16" height="16">
                 <use href="/sprite.svg#car-icon" />
-              </svg>{" "}
-              Engine Size: {engineSize}
+              </svg>
+              <p>Engine Size: {engineSize}</p>
             </li>
             <li>
               <svg className={css.icon} width="16" height="16">
                 <use href="/sprite.svg#car-icon" />
-              </svg>{" "}
-              Mileage: {mileage.toLocaleString()} km
+              </svg>
+              <p>Mileage: {mileage.toLocaleString()} km</p>
             </li>
           </ul>
         </div>
@@ -105,8 +105,8 @@ const CarDetails = ({ car }) => {
               <li key={i}>
                 <svg className={css.icon} width="16" height="16">
                   <use href="/sprite.svg#v-sign-icon" />
-                </svg>{" "}
-                {item}
+                </svg>
+                <p>{item}</p>
               </li>
             ))}
           </ul>
@@ -115,8 +115,8 @@ const CarDetails = ({ car }) => {
               <li key={i}>
                 <svg className={css.icon} width="16" height="16">
                   <use href="/sprite.svg#v-sign-icon" />
-                </svg>{" "}
-                {item}
+                </svg>
+                <p>{item}</p>
               </li>
             ))}
           </ul>
