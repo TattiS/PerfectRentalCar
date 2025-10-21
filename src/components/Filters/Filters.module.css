@@ -12,6 +12,10 @@
   flex-direction: row;
   gap: 16px;
   justify-content: center;
+  align-items: center;
+}
+.filtersForm:last-child {
+  align-items: end;
 }
 
 .inputWrapper {

@@ -79,18 +79,17 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 20px; /* 125% */
+  line-height: 20px;
 }
 
 .subheading {
   color: var(--main, #101828);
 
-  /* h3 */
   font-family: Manrope;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
-  line-height: 24px; /* 120% */
+  line-height: 24px;
   margin-top: 20px;
   margin-bottom: 10px;
   border: none;
@@ -101,9 +100,25 @@
   list-style: none;
   padding-left: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
 }
 
 .list li {
   margin-bottom: 6px;
   font-size: 1rem;
+  display: flex;
+  column-gap: 4px;
+  justify-content: baseline;
+  align-items: center;
+}
+
+.list li svg {
+  display: block;
+  float: right;
+}
+
+.list + .list {
+  margin-top: 8px;
 }
